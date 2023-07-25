@@ -23,7 +23,7 @@ allprojects {
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
+//apply from: '/Users/coeus/Documents/development/flutter/packages/flutter_tools/gradle/flutter.gradle'
 android {
     compileSdkVersion 31
 

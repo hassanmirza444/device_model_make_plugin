@@ -2,20 +2,23 @@ package com.hssnmirza.device_model_make_plugin_example
 
 import android.os.Build
 import androidx.annotation.NonNull
+import com.hssnmirza.device_model_make_plugin.DeviceModelMakePlugin
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
 class MainActivity: FlutterActivity() {
 
     private val CHANNEL = "hassanmirza444.github.com/deviceModelMakePlugin"
-
+    private val deviceModelMakePlugin: DeviceModelMakePlugin =DeviceModelMakePlugin();
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
                 call, result ->
             if (call.method == "getDeviceModelMake") {
-                val _deviceModelMake = getDeviceModelMake()
+                 deviceModelMakePlugin.onMethodCall(call,result);
+                val _deviceModelMake = ""
                 if (_deviceModelMake.isNotEmpty()) {
                     result.success(_deviceModelMake)
                 } else {
