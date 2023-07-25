@@ -1,6 +1,6 @@
 name: device_model_make_plugin
 description: A Flutter plugin that provides device make and model on android and IOS.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/hassanmirza444/device_model_make_plugin
 
 environment:
